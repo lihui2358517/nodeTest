@@ -1,0 +1,24 @@
+{
+  "name": "lihui",
+  "version": "1.0.0",
+  "description": "learn node",
+  "main": "index.js",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "handlebars": "^4.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lihui2358517/nodeTest.git"
+  },
+  "author": "1045625058@qq.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lihui2358517/nodeTest/issues"
+  },
+  "homepage": "https://github.com/lihui2358517/nodeTest#readme"
+}
