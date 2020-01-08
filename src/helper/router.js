@@ -28,7 +28,6 @@ module.exports = async function(req,res,filePath){
 				title:path.basename(filePath),
 				files,
 				dir:dir?`/${dir}`:'',
-
 			}
 			res.end(template(data))
 		}
