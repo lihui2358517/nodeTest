@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const config = require('../config/defaultConfig')
 const handlebars = require('handlebars');
+const mimeType = require('./mimeType')
 //util.promisify  让一个遵循异常优先的回调风格的函数，即 (err, value) => ... 回调函数是最后一个参数，返回一个返回值是一个 promise 版本的函数。
 const promisify = require('util').promisify;
 const stat = promisify(fs.stat);
@@ -16,8 +17,9 @@ module.exports = async function(req,res,filePath){
 	try{
 		const stats = await stat(filePath);
 		if (stats.isFile()) {
+			const mimeTypes = mimeType(filePath);
 			res.statusCode = 200;
-			res.setHeader('Content-Type','text/plain');
+			res.setHeader('Content-Type',mimeTypes);
 			fs.createReadStream(filePath).pipe(res);
 		}else if(stats.isDirectory()){
 			const files = await readdir(filePath);
