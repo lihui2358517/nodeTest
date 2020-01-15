@@ -29,6 +29,5 @@ module.exports = (filePath)=>{
       if (!ext) {
             ext = filePath
       }
-      console.log(mimeType[ext])
       return mimeType[ext]||mimeType['txt']
 }

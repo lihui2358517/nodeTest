@@ -7,9 +7,13 @@ const server = http.createServer((req,res)=>{
 	const filePath = path.join(config.root,req.url)
 	router(req,res,filePath);
 })
+
+
+
+console.log('测试')
 server.listen(config.port,config.hostname,()=>{
 	const addr = `http://${config.hostname}:${config.port}`;
 	console.info(`server started at ${chalk.green(addr)}`)
 })
 
-module.exports = server
+
